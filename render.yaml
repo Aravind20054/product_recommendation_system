@@ -1,0 +1,10 @@
+
+services:
+  - type: web
+    name: product-recommendation-app
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    startCommand: gunicorn app:app --timeout 120
+    pythonVersion: 3.10.12
